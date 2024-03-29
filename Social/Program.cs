@@ -6,6 +6,7 @@ using System.Data;
 using Microsoft.Azure.Cosmos;
 using CloudinaryDotNet;
 using Common.Services;
+using Microsoft.AspNetCore.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,9 +21,9 @@ builder.Services.AddScoped<RepositoryInterface, CosmosRepository>();
 
 var configuration = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+    .AddUserSecrets<Program>() // This line loads secrets.json
     .AddEnvironmentVariables()
     .Build();
-
 
 
 string connectionString = configuration.GetConnectionString("SqlConnection");
