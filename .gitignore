@@ -1,0 +1,56 @@
+# Ignore Visual Studio temporary files, build results, and
+# from different operating systems
+[Bb]in/
+[Oo]bj/
+.vscode/
+.vs/
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.userprefs
+*.sln.docstates
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+# StyleCop
+StyleCopReport.xml
+# Files built by Visual Studio
+*.nupkg
+*.snupkg
+# NuGet Packages
+*.nupkg
+# The packages folder can be ignored because of Package Restore
+**/packages/*
+# except build/, which is used as an MSBuild target.
+!**/packages/build/
+# Uncomment if necessary however generally it will be regenerated when needed
+# !**/packages/repositories.config
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+# Folder config file
+Desktop.ini
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+# VS Code directories
+.vscode/
+# Include if you have system node_modules
+# node_modules/
+# Log files
+*.log
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+# Windows shortcuts
+*.lnk
+# JetBrains Rider
+.idea/
+*.sln.iml
+# End of line normalization / diff settings
+.gitattributes

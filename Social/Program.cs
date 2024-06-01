@@ -7,6 +7,8 @@ using Microsoft.Azure.Cosmos;
 using CloudinaryDotNet;
 using Common.Services;
 using Microsoft.AspNetCore.Hosting;
+using Azure.Storage.Blobs;
+using Services.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +20,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<StudentInterface, StudentService>();
 builder.Services.AddScoped<RepositoryInterface, CosmosRepository>();
+builder.Services.AddScoped(_ =>
+{
+    return new BlobServiceClient(builder.Configuration.GetConnectionString("AzureBlobStorage"));
+});
+builder.Services.AddScoped<FileServiceInterface, FileService>();
 
 var configuration = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)

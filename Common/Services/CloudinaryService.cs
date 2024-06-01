@@ -18,6 +18,7 @@ namespace Common.Services
         {
             try
             {
+                
                 if (file == null || file.Length == 0)
                 {
                     throw new ArgumentException("File is null or empty.");
@@ -32,7 +33,10 @@ namespace Common.Services
                     };
 
                     var uploadResult = await _cloudinary.UploadAsync(uploadParams);
-                    return uploadResult?.SecureUri.ToString();
+
+
+                    Console.WriteLine(uploadResult.SecureUrl.ToString());
+                    return uploadResult.SecureUrl.ToString();
                 }
             }
             catch (Exception ex)
